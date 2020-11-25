@@ -11,18 +11,22 @@ class App extends Component {
   buttonPressed = (buttonName) => {
     if (buttonName === "=") {
       this.calculate();
+      return;
     } else if (buttonName === "C") {
       this.reset();
+      return;
     } else if (buttonName === "CE") this.backspace();
     this.setState({
       result: this.state.result + buttonName,
     });
+    return;
   };
 
   backspace = () => {
     this.setState({
       result: this.state.result.slice(0, -1),
     });
+    return;
   };
 
   reset = () => {
